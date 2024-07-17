@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block section %}
+<h2>Player</h2>
+{% endblock section %}
+
+{% block maincontent %}
+<div class="card mb-3" style="max-width: 540px;" id="card">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="{% static object.photo.url %}" class="img-fluid rounded-start" style="width:250px;height:180px" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{ object.first_name }} {{ object.last_name }}</h5>
+          <p class="card-text">
+                Team: <a href="{% url "team-detail" object.team_id %}">
+                    {{ object.team }}
+                  </a> <br>
+                Heigth: {{ object.height }} <br>
+                Weight: {{ object.weight }} <br>
+                <strong>Comments: </strong>{{ object.comment|default:"no comments" }}</p>
+                <a href="{% url "player-update" object.id %}">edit</a>
+                <a href="{% url "player-delete" object.id %}">delete</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock maincontent %} 
