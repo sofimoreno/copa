@@ -1,7 +1,7 @@
 # Quick Start
 
 1. Clonar repositorio
-    <code> git clone https://github.com/Juanjofigue97/Copa-America.git</code>
+    <code> git clone https://github.com/......</code>
 
 2. Instalar dependencias
     ```
